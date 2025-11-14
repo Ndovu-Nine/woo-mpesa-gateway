@@ -1,0 +1,21 @@
+/* Custom styling for M-Pesa fields */
+#mpesa_phone_field {
+    margin-bottom: 1.5rem;
+}
+
+#mpesa_phone_field input {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+}
+
+#mpesa_phone_field label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.wc_payment_method .payment_method_mpesa img {
+    max-width: 25%;
+}
