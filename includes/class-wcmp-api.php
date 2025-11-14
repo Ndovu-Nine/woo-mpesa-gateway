@@ -75,6 +75,8 @@ class WCMP_API {
             'TransactionDesc' => __('Payment for Order #', 'mpesa-wc-gateway') . $order_id
         ];
 
+        mpesa_write_log('WCMP API Request: ' . json_encode($request_data));
+
         $response = wp_remote_post($this->stk_push_url, [
             'headers' => [
                 'Authorization' => 'Bearer ' . $access_token,

@@ -15,8 +15,9 @@ class WCMP_REST_API {
     }
 
     public function verify_ip() {
-        // IP verification has been removed.
-        return true;
+        $safaricom_ips = ['196.201.214.200', '196.201.214.206'];
+        $client_ip = $_SERVER['REMOTE_ADDR'];
+        return in_array($client_ip, $safaricom_ips) || defined('WCMP_SKIP_IP_CHECK');
     }
 
     public function handle_callback(WP_REST_Request $request) {
