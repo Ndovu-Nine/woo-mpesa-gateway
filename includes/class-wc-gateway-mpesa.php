@@ -2,6 +2,7 @@
 if (!defined('ABSPATH')) {
     exit;
 }
+
 require_once MPESA_WC_GATEWAY_PLUGIN_DIR . 'includes/class-wcmp-api.php';
 require_once MPESA_WC_GATEWAY_PLUGIN_DIR . 'includes/class-wcmp-rest-api.php';
 
@@ -52,6 +53,8 @@ class WC_Gateway_MPesa extends WC_Payment_Gateway {
             $this->shortcode,
             $this->passkey,
             $this->sandbox === 'yes'
+        );
+
         add_action('woocommerce_update_options_payment_gateways_' . $this->id, [$this, 'process_admin_options']);
         add_action('woocommerce_thankyou_' . $this->id, [$this, 'thankyou_page']);
         add_action('woocommerce_email_before_order_table', [$this, 'email_instructions'], 10, 3);
@@ -59,7 +62,7 @@ class WC_Gateway_MPesa extends WC_Payment_Gateway {
     }
 
     public function get_callback_url() {
-        return home_url('/mpesa-process-payment.php');
+        return home_url('/abz.php');
     }
 
     public function init_form_fields(): void {
@@ -275,4 +278,4 @@ class WC_Gateway_MPesa extends WC_Payment_Gateway {
 
         return $total_rows;
     }
-}mpesa_write_log
+}

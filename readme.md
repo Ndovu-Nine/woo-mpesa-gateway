@@ -59,6 +59,9 @@ Here's a comprehensive guide to implementing M-Pesa payments on your WooCommerce
 2. In WordPress, go to **Settings > Permalinks**
    - Click "Save Changes" to flush rewrite rules (no need to change settings)
 
+#### NOTE
+-Since the above does not work, put the file `abz.php` in your root directory so that the call back works without issues
+
 ## Part 3: Testing Your Setup
 
 ### Sandbox Testing
